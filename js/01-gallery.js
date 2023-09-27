@@ -4,9 +4,9 @@ import { galleryItems } from './gallery-items.js';
 // console.log(galleryItems);
 
 const galleryContainer = document.querySelector('.gallery');
-const galleryCardsSet = createGallery(galleryItems);
+const galleryCardsSet = createElement(galleryItems);
 
-function createGallery(galleryItems) {
+function createElement(galleryItems) {
   return galleryItems
     .map(({ original, preview, description }) => {
         return `<li
@@ -29,9 +29,9 @@ function createGallery(galleryItems) {
 galleryContainer.insertAdjacentHTML('beforeend', galleryCardsSet.join(''));
 
 
-galleryContainer.addEventListener('click', selectGalleryEl);
+galleryContainer.addEventListener('click', selectGallery);
 
-function selectGalleryEl(event) {
+function selectGallery(event) {
   event.preventDefault();
   if (event.target.nodeName !== 'IMG') {
     return;
